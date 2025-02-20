@@ -7,11 +7,13 @@ import { type FC } from "react"
 
 const Footer: FC = () => {
 	return (
-		<footer className={"bg-footer"}>
+		<footer className={"bg-footer px-4"}>
 			<Container>
 				<div>
 					<div className={"border-b-4 pt-24 pb-16 border-primary"}>
-						<Stack className={"gap-12"}>
+						<Stack
+							className={"gap-12 flex-wrap max-md:flex-col max-md:items-center"}
+						>
 							<div>
 								<Image src={"/logo.png"} width={110} height={114} alt={""} />
 							</div>
@@ -65,14 +67,6 @@ const Footer: FC = () => {
 									{
 										href: "/seminars-conferences",
 										title: "Семинары и конференции"
-									},
-									{
-										href: "/annual-reports",
-										title: "Годовые отчеты"
-									},
-									{
-										href: "/charter",
-										title: "Устав"
 									}
 								]}
 							/>

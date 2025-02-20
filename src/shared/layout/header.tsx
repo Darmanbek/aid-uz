@@ -1,12 +1,13 @@
 import { SITE_DESCRIPTION, SITE_NAME } from "@/shared/constants"
+import { Button } from "@/shared/ui"
 import { Container, Stack } from "@/widgets"
-import { Eye } from "lucide-react"
+import { Eye, Menu } from "lucide-react"
 import Image from "next/image"
 import { type FC } from "react"
 
 const Header: FC = () => {
 	return (
-		<header>
+		<header className={"px-4"}>
 			<Container>
 				<div
 					className={
@@ -14,8 +15,14 @@ const Header: FC = () => {
 					}
 				>
 					<Stack className={"items-center"}>
-						<Image src={"/logo.png"} width={110} height={114} alt={""} />
-						<Stack className={"flex-col gap-1"}>
+						<Image
+							src={"/logo.png"}
+							width={110}
+							height={114}
+							alt={""}
+							className={"w-[110px] h-[114px] max-md:w-[60px] max-md:h-[64px]"}
+						/>
+						<Stack className={"flex-col gap-1 max-md:hidden"}>
 							<h1 className={"text-3xl font-semibold text-primary"}>
 								{SITE_NAME}
 							</h1>
@@ -23,14 +30,30 @@ const Header: FC = () => {
 						</Stack>
 					</Stack>
 
-					<Stack className={"gap-5"}>
-						<Eye
-							className={"text-muted-foreground"}
-							fill={"currentColor"}
-							stroke={"#fff"}
-							size={35}
-						/>
-						<span className={"text-2xl font-normal"}>Py</span>
+					<Stack className={"gap-5 max-md:items-center"}>
+						<Button
+							size={"icon"}
+							variant={"ghost"}
+							className={
+								"[&_svg]:size-7 md:[&_svg]:size-9 text-muted-foreground rounded-full"
+							}
+						>
+							<Eye fill={"currentColor"} stroke={"#fff"} />
+						</Button>
+						<Button
+							size={"icon"}
+							variant={"ghost"}
+							className={"text-xl md:text-2xl font-normal"}
+						>
+							Py
+						</Button>
+						<Button
+							size={"icon"}
+							variant={"ghost"}
+							className={"[&_svg]:size-7 md:hidden"}
+						>
+							<Menu />
+						</Button>
 					</Stack>
 				</div>
 			</Container>

@@ -20,7 +20,7 @@ const FooterLinkItem: FC<FooterLinkItemProps> = ({
 	items = []
 }) => {
 	return (
-		<ul className={"flex flex-col gap-1"}>
+		<ul className={"flex flex-col gap-1 max-md:items-center"}>
 			<li>
 				<h3 className={"text-lg font-semibold"}>{title}</h3>
 			</li>

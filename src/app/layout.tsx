@@ -1,5 +1,5 @@
 import { SITE_DESCRIPTION, SITE_NAME } from "@/shared/constants"
-import { Footer, Header } from "@/shared/layout"
+import { Footer, Header, Navbar } from "@/shared/layout"
 import { cn } from "@/shared/lib/utils"
 import type { Metadata } from "next"
 import "./globals.css"
@@ -39,7 +39,10 @@ export default function RootLayout({
 			<body className={cn(montserrat.variable, montserrat.className)}>
 				<div className={"min-h-screen flex flex-col"}>
 					<Header />
-					<main className={"flex-grow flex flex-col gap-12"}>{children}</main>
+					<Navbar />
+					<main className={"flex-grow flex flex-col gap-12 min-h-[50vh]"}>
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</body>
