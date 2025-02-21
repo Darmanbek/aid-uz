@@ -3,6 +3,7 @@ import { Button } from "@/shared/ui"
 import { Container, Stack } from "@/widgets"
 import { Eye, Menu } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { type FC } from "react"
 
 const Header: FC = () => {
@@ -15,18 +16,24 @@ const Header: FC = () => {
 					}
 				>
 					<Stack className={"items-center"}>
-						<Image
-							src={"/logo.png"}
-							width={110}
-							height={114}
-							alt={""}
-							className={"w-[110px] h-[114px] max-md:w-[60px] max-md:h-[64px]"}
-						/>
+						<Link href={"/"}>
+							<Image
+								src={"/logo.png"}
+								width={110}
+								height={114}
+								alt={""}
+								className={
+									"w-[110px] h-[114px] max-md:w-[60px] max-md:h-[64px]"
+								}
+							/>
+						</Link>
 						<Stack className={"flex-col gap-1 max-md:hidden"}>
-							<h1 className={"text-3xl font-semibold text-primary"}>
+							<h1 className={"text-3xl font-semibold text-primary uppercase"}>
 								{SITE_NAME}
 							</h1>
-							<h2 className={"text-2xl font-normal"}>{SITE_DESCRIPTION}</h2>
+							<h2 className={"text-2xl font-normal uppercase"}>
+								{SITE_DESCRIPTION}
+							</h2>
 						</Stack>
 					</Stack>
 

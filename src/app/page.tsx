@@ -1,11 +1,9 @@
-import { Container } from "@/widgets"
+import { HomePage } from "@/features/home"
 
 export default function Page() {
 	return (
-		<section>
-			<Container>
-				<h1>Home</h1>
-			</Container>
-		</section>
+		<>
+			<HomePage />
+		</>
 	)
 }
