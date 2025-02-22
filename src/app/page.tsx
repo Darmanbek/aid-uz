@@ -1,9 +1,11 @@
-import { HomePage } from "@/features/home"
+import { HomeAssociation, HomeNews, HomePreviews } from "@/features/home"
 
 export default function Page() {
 	return (
 		<>
-			<HomePage />
+			<HomePreviews />
+			<HomeNews />
+			<HomeAssociation />
 		</>
 	)
 }

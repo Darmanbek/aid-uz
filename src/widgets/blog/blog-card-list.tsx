@@ -6,7 +6,7 @@ interface BlogListProps {
 	data: Blog[]
 }
 
-const BlogList: FC<BlogListProps> = ({ data: blogs }) => {
+const BlogCardList: FC<BlogListProps> = ({ data: blogs }) => {
 	return (
 		<div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"}>
 			{blogs.map((blog, index) => (
@@ -16,4 +16,4 @@ const BlogList: FC<BlogListProps> = ({ data: blogs }) => {
 	)
 }
 
-export { BlogList }
+export { BlogCardList }

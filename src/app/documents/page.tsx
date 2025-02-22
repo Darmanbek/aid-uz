@@ -2,7 +2,7 @@ import { Container } from "@/widgets"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
-	title: "Page"
+	title: "Документы"
 }
 
 const Page: NextPage = () => {

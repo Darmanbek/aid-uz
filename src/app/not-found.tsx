@@ -1,6 +1,10 @@
 import { Container } from "@/widgets"
 import Image from "next/image"
 
+export const metadata = {
+	title: "Страница не найдена"
+}
+
 export default function NotFound() {
 	return (
 		<section className={"flex flex-col grow"}>

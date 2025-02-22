@@ -1,4 +1,6 @@
+import { blogsData } from "@/shared/data"
 import { Container } from "@/widgets"
+import { BlogCardList } from "@/widgets/blog"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -7,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<section>
+		<section className={"py-4 pb-12"}>
 			<Container>
 				<div>
-					<h1>News</h1>
+					<BlogCardList data={[...blogsData, ...blogsData, ...blogsData]} />
 				</div>
 			</Container>
 		</section>

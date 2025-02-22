@@ -12,16 +12,16 @@ interface PreviewItemProps {
 const PreviewItem: FC<PreviewItemProps> = ({ data: preview }) => {
 	return (
 		<div className={"flex max-lg:flex-col gap-10 p-1"}>
-			<div className={"rounded-2xl lg:min-w-[500px] w-full overflow-hidden"}>
+			<div
+				className={
+					"relative w-full lg:min-w-[500px] aspect-[16/10] rounded-2xl overflow-hidden"
+				}
+			>
 				<Image
 					src={preview?.image}
-					width={720}
-					objectFit={"cover"}
-					height={500}
+					fill={true}
 					alt={""}
-					className={
-						"lg:min-w-[500px] max-h-[500px] w-full rounded-2xl object-cover"
-					}
+					className={"object-cover w-full h-full"}
 				/>
 			</div>
 			<div

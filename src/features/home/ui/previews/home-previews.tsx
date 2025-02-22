@@ -1,81 +1,16 @@
-"use client"
-
-import { previewsData } from "@/shared/data"
-import { cn } from "@/shared/lib/utils"
-import {
-	Carousel,
-	type CarouselApi,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious
-} from "@/shared/ui"
-import { type FC, useEffect, useState } from "react"
-import { PreviewItem } from "./preview-item"
+import { Container } from "@/widgets"
+import { type FC } from "react"
+import { PreviewCarousel } from "./preview-carousel"
 
 const HomePreviews: FC = () => {
-	const [api, setApi] = useState<CarouselApi>()
-	const [current, setCurrent] = useState(0)
-	const [count, setCount] = useState(0)
-
-	useEffect(() => {
-		if (!api) {
-			return
-		}
-
-		setCount(api.scrollSnapList().length)
-		setCurrent(api.selectedScrollSnap() + 1)
-
-		api.on("select", () => {
-			setCurrent(api.selectedScrollSnap() + 1)
-		})
-	}, [api])
 	return (
-		<div className={"px-12 border-b-4 border-primary py-12"}>
-			<Carousel
-				setApi={setApi}
-				className={"w-full"}
-				opts={{
-					loop: true
-				}}
-			>
-				<CarouselContent>
-					{previewsData.map((preview, index) => (
-						<CarouselItem key={index}>
-							<PreviewItem data={preview} />
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				<CarouselPrevious
-					variant={"ghost"}
-					className={"[&_svg]:size-12 size-12"}
-					iconProps={{
-						strokeWidth: 1
-					}}
-				/>
-				<CarouselNext
-					variant={"ghost"}
-					className={"[&_svg]:size-12 size-12"}
-					iconProps={{
-						strokeWidth: 1
-					}}
-				/>
-			</Carousel>
-			<div className={"py-2 flex justify-center gap-3"}>
-				{Array.from({ length: count }).map((_, index) => (
-					<span
-						className={cn(
-							"size-3 cursor-pointer rounded-full bg-muted-foreground/60",
-							{
-								"bg-primary-secondary": current - 1 === index
-							}
-						)}
-						onClick={() => api?.scrollTo(index)}
-						key={index}
-					/>
-				))}
-			</div>
-		</div>
+		<section>
+			<Container>
+				<div>
+					<PreviewCarousel />
+				</div>
+			</Container>
+		</section>
 	)
 }
 

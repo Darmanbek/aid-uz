@@ -1,3 +1,4 @@
+import { ContactsInfo } from "@/features/contacts"
 import { Container } from "@/widgets"
 import type { Metadata } from "next"
 
@@ -7,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<section>
+		<section className={"py-4"}>
 			<Container>
 				<div>
-					<h1>Contacts</h1>
+					<ContactsInfo />
 				</div>
 			</Container>
 		</section>
