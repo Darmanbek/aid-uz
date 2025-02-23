@@ -1,3 +1,4 @@
+import { cn } from "@/shared/lib/utils"
 import type { Blog } from "@/shared/types"
 import { Button, CardDescription, CardTitle, Separator } from "@/shared/ui"
 import { Stack } from "@/widgets"
@@ -7,15 +8,29 @@ import { type FC } from "react"
 
 interface BlogListItemProps {
 	data: Blog
+	className?: string
+	classNames?: {
+		title?: string
+		subTitle?: string
+		description?: string
+		image?: string
+		button?: string
+		separator?: string
+	}
 }
 
-const BlogListItem: FC<BlogListItemProps> = ({ data: blog }) => {
+const BlogListItem: FC<BlogListItemProps> = ({
+	data: blog,
+	className,
+	classNames
+}) => {
 	return (
-		<div className={"flex gap-8"}>
+		<div className={cn("flex gap-8", className)}>
 			<div
-				className={
-					"relative rounded-2xl overflow-hidden min-w-[290px] min-h-full grow"
-				}
+				className={cn(
+					"relative rounded-2xl overflow-hidden min-w-[290px] min-h-full grow",
+					classNames?.image
+				)}
 			>
 				<Image
 					fill={true}
@@ -26,19 +41,30 @@ const BlogListItem: FC<BlogListItemProps> = ({ data: blog }) => {
 			</div>
 			<div>
 				<Stack className={"gap-3 flex-col"}>
-					<CardTitle className={"text-2xl font-bold line-clamp-1"}>
+					<CardTitle
+						className={cn("text-2xl font-bold line-clamp-1", classNames?.title)}
+					>
 						{blog.title}
 					</CardTitle>
-					<CardDescription className={"text-xl line-clamp-1"}>
-						{blog.created_at}
-					</CardDescription>
+					{blog.subTitle && (
+						<CardDescription
+							className={cn("text-xl line-clamp-1", classNames?.subTitle)}
+						>
+							{blog.subTitle}
+						</CardDescription>
+					)}
 				</Stack>
-				<Separator className={"my-5"} />
+				<Separator className={cn("my-5", classNames?.separator)} />
 				<Stack className={"gap-3 flex-col items-start"}>
-					<p className={"text-xl text-ellipsis text-justify line-clamp-6"}>
+					<p
+						className={cn(
+							"text-xl text-ellipsis text-justify line-clamp-6",
+							classNames?.description
+						)}
+					>
 						{blog.description}
 					</p>
-					<Button variant={"default-secondary"}>
+					<Button variant={"default-secondary"} className={classNames?.button}>
 						Подробнее <ChevronRight />
 					</Button>
 				</Stack>

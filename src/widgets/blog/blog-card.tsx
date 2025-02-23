@@ -1,3 +1,4 @@
+import { cn } from "@/shared/lib/utils"
 import type { Blog } from "@/shared/types"
 import {
 	Card,
@@ -11,24 +12,42 @@ import { type FC } from "react"
 
 interface BlogCardProps {
 	data: Blog
+	className?: string
+	classNames?: {
+		image?: string
+		header?: string
+		title?: string
+		subTitle?: string
+		content?: string
+		description?: string
+	}
 }
 
-const BlogCard: FC<BlogCardProps> = ({ data: blog }) => {
+const BlogCard: FC<BlogCardProps> = ({ data: blog, className, classNames }) => {
 	return (
-		<Card className={"overflow-hidden"}>
+		<Card className={cn("overflow-hidden", className)}>
 			<Image
 				src={blog?.image}
 				width={390}
 				height={280}
 				alt={""}
-				className={"w-full"}
+				className={cn("w-full", classNames?.image)}
 			/>
-			<CardHeader>
-				<CardTitle className={"text-xl"}>{blog.title}</CardTitle>
-				<CardDescription>{blog.created_at}</CardDescription>
+			<CardHeader className={classNames?.header}>
+				<CardTitle className={cn("text-xl", classNames?.title)}>
+					{blog.title}
+				</CardTitle>
+				<CardDescription className={classNames?.subTitle}>
+					{blog.subTitle}
+				</CardDescription>
 			</CardHeader>
-			<CardContent>
-				<p className={"overflow-hidden text-ellipsis line-clamp-[8]"}>
+			<CardContent className={classNames?.content}>
+				<p
+					className={cn(
+						"overflow-hidden text-ellipsis line-clamp-[8]",
+						classNames?.description
+					)}
+				>
 					{blog.description}
 				</p>
 			</CardContent>

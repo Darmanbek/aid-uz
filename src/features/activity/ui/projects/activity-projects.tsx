@@ -1,11 +1,18 @@
-import { employeesData } from "@/shared/data/employees.data"
+import { projectsData } from "@/shared/data/projects.data"
 import { BlogList } from "@/widgets/blog"
 import { type FC } from "react"
 
 const ActivityProjects: FC = () => {
 	return (
 		<>
-			<BlogList data={employeesData} />
+			<BlogList
+				separatorClassName={"bg-primary-secondary"}
+				itemClassNames={{
+					separator: "bg-primary-secondary",
+					button: "ml-auto"
+				}}
+				data={projectsData}
+			/>
 		</>
 	)
 }

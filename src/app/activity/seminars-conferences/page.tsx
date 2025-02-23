@@ -1,3 +1,4 @@
+import { ActivitySeminarsConferences } from "@/features/activity"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 const Page: NextPage = () => {
 	return (
 		<section>
-			<h1>Семинары и конференции</h1>
+			<ActivitySeminarsConferences />
 		</section>
 	)
 }
