@@ -1,4 +1,4 @@
-import { FileItem } from "@/shared/types/files.types"
+import type { FileItem } from "@/shared/types/files.types"
 
 export const filesData: FileItem[] = [
 	{
