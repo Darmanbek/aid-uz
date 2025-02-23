@@ -15,8 +15,15 @@ import { Stack } from "@/widgets"
 import { type FC } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
 
+type ContactChange = {
+	firstname: string
+	lastname: string
+	email: string
+	message: string
+}
+
 const ContactsForm: FC = () => {
-	const form = useForm<any>({
+	const form = useForm<ContactChange>({
 		defaultValues: {
 			firstname: "",
 			lastname: "",
@@ -25,7 +32,7 @@ const ContactsForm: FC = () => {
 		}
 	})
 
-	const onSubmit: SubmitHandler<any> = (data) => {
+	const onSubmit: SubmitHandler<ContactChange> = (data) => {
 		console.log(data)
 	}
 
