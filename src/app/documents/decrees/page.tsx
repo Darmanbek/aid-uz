@@ -1,13 +1,14 @@
+import { DocumentsDecrees } from "@/features/documents"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
-	title: "Page"
+	title: "Указы"
 }
 
 const Page: NextPage = () => {
 	return (
 		<section>
-			<h1>Page</h1>
+			<DocumentsDecrees />
 		</section>
 	)
 }

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<div>
-			<h1>Association</h1>
-		</div>
+		<section className={"flex items-center justify-center w-full min-h-[50vh]"}>
+			<h1 className={"text-3xl text-center"}>Ассоцияция</h1>
+		</section>
 	)
 }

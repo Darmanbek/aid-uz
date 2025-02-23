@@ -12,7 +12,9 @@ const Navbar: FC = () => {
 					<ul className={"flex gap-5 justify-around flex-wrap w-full"}>
 						{navbarData.map((item, index) => (
 							<li key={index}>
-								<NavLink href={item.path}>{item.title}</NavLink>
+								<NavLink href={item.path} exact={true}>
+									{item.title}
+								</NavLink>
 							</li>
 						))}
 					</ul>

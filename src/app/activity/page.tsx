@@ -1,4 +1,3 @@
-import { Container } from "@/widgets"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -7,12 +6,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<section>
-			<Container>
-				<div>
-					<h1>Activity</h1>
-				</div>
-			</Container>
+		<section className={"flex items-center justify-center w-full min-h-[50vh]"}>
+			<h1 className={"text-3xl text-center"}>Деятельность</h1>
 		</section>
 	)
 }

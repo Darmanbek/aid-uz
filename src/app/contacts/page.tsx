@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<section className={"py-4"}>
+		<section className={"py-4 px-4"}>
 			<Container>
 				<div>
 					<ContactsInfo />

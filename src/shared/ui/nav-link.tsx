@@ -5,11 +5,14 @@ import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { type ComponentProps, forwardRef } from "react"
 
-export type NavLinkProps = LinkProps &
-	Omit<ComponentProps<"a">, keyof LinkProps>
+interface NavLinkProps
+	extends LinkProps,
+		Omit<ComponentProps<"a">, keyof LinkProps> {
+	exact?: boolean
+}
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
-	({ className, href, ...rest }, ref) => {
+	({ className, href, exact, ...rest }, ref) => {
 		const pathname = usePathname()
 
 		const url = typeof href === "string" ? href : href.pathname
@@ -20,7 +23,9 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
 					"text-2xl font-normal border-transparent border-b-4 pb-1 hover:text-primary-secondary hover:border-primary-secondary [&.active]:border-primary-secondary",
 					{
 						"border-primary-secondary text-primary-secondary font-medium":
-							url === pathname
+							exact && url && url !== "/"
+								? pathname.startsWith(url)
+								: url === pathname
 					},
 					className
 				)}

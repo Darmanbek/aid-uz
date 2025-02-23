@@ -4,7 +4,10 @@ import type { Metadata, NextPage } from "next"
 import type { PropsWithChildren } from "react"
 
 export const metadata: Metadata = {
-	title: "Документы"
+	title: {
+		template: "%s | Документы",
+		default: "Документы"
+	}
 }
 
 const Layout: NextPage<PropsWithChildren> = ({ children }) => {

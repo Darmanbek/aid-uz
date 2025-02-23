@@ -1,13 +1,14 @@
+import { DocumentsLaws } from "@/features/documents"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
-	title: "Page"
+	title: "Законы"
 }
 
 const Page: NextPage = () => {
 	return (
 		<section>
-			<h1>Page</h1>
+			<DocumentsLaws />
 		</section>
 	)
 }

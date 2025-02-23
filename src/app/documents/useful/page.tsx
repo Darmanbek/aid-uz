@@ -1,13 +1,14 @@
+import { DocumentsUseful } from "@/features/documents"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
-	title: "Page"
+	title: "Полезные"
 }
 
 const Page: NextPage = () => {
 	return (
 		<section>
-			<h1>Page</h1>
+			<DocumentsUseful />
 		</section>
 	)
 }

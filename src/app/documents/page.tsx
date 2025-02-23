@@ -1,4 +1,3 @@
-import { Container } from "@/widgets"
 import type { Metadata, NextPage } from "next"
 
 export const metadata: Metadata = {
@@ -7,12 +6,8 @@ export const metadata: Metadata = {
 
 const Page: NextPage = () => {
 	return (
-		<section>
-			<Container>
-				<div>
-					<h1>Documents</h1>
-				</div>
-			</Container>
+		<section className={"flex items-center justify-center w-full min-h-[50vh]"}>
+			<h1 className={"text-3xl text-center"}>Документы</h1>
 		</section>
 	)
 }
