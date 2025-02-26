@@ -25,10 +25,10 @@ const BlogListItem: FC<BlogListItemProps> = ({
 	classNames
 }) => {
 	return (
-		<div className={cn("flex gap-8", className)}>
+		<div className={cn("flex max-md:flex-col gap-8", className)}>
 			<div
 				className={cn(
-					"relative rounded-2xl overflow-hidden min-w-[290px] min-h-full grow",
+					"relative rounded-2xl overflow-hidden max-md:min-h-[290px] md:min-w-[290px] min-h-full grow",
 					classNames?.image
 				)}
 			>
