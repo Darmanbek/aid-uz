@@ -1,7 +1,7 @@
 import { FooterLinkItem } from "@/shared/layout/footer/footer-link-item"
+import { Image } from "@/shared/ui"
 import { Container, Stack } from "@/widgets"
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { type FC } from "react"
 
@@ -15,7 +15,12 @@ const Footer: FC = () => {
 							className={"gap-12 flex-wrap max-md:flex-col max-md:items-center"}
 						>
 							<div>
-								<Image src={"/logo.png"} width={110} height={114} alt={""} />
+								<Image
+									src={"/logo.png"}
+									width={110}
+									height={114}
+									alt={"Лого"}
+								/>
 							</div>
 							<FooterLinkItem href={"/"} title={"Главная"} />
 							<FooterLinkItem

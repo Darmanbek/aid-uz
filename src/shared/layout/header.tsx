@@ -1,8 +1,7 @@
 import { SITE_DESCRIPTION, SITE_NAME } from "@/shared/constants"
-import { Button } from "@/shared/ui"
+import { Button, Image } from "@/shared/ui"
 import { Container, Stack } from "@/widgets"
 import { Eye, Menu } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { type FC } from "react"
 
@@ -21,7 +20,7 @@ const Header: FC = () => {
 								src={"/logo.png"}
 								width={110}
 								height={114}
-								alt={""}
+								alt={"Логотип"}
 								className={
 									"w-[110px] h-[114px] max-md:w-[60px] max-md:h-[64px]"
 								}

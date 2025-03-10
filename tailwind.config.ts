@@ -8,6 +8,80 @@ const config: Config = {
 			fontFamily: {
 				montserrat: "var(--font-montserrat)"
 			},
+			fontSize: {
+				sm: [
+					"calc(var(--font-size) - 2px)", // 14px
+					{
+						lineHeight: "calc(var(--line-height) - 4px)" // 20px
+					}
+				],
+				base: [
+					"var(--font-size)", // 16px
+					{
+						lineHeight: "var(--line-height)" // 24px
+					}
+				],
+				lg: [
+					"calc(var(--font-size) + 2px)", // 18px
+					{
+						lineHeight: "calc(var(--line-height) + 4px)" // 28px
+					}
+				],
+				xl: [
+					"calc(var(--font-size) + 4px)", // 20px
+					{
+						lineHeight: "calc(var(--line-height) + 4px)" // 28px
+					}
+				],
+				"2xl": [
+					"calc(var(--font-size) + 8px)", // 24px
+					{
+						lineHeight: "calc(var(--line-height) + 8px)" // 32px
+					}
+				],
+				"3xl": [
+					"calc(var(--font-size) + 14px)", // 30px
+					{
+						lineHeight: "calc(var(--line-height) + 12px)" // 36px
+					}
+				],
+				"4xl": [
+					"calc(var(--font-size) + 20px)", // 36px
+					{
+						lineHeight: "calc(var(--line-height) + 16px)" // 40px
+					}
+				],
+				"5xl": [
+					"calc(var(--font-size) + 32px)", // 48px
+					{
+						lineHeight: "1" // 1
+					}
+				],
+				"6xl": [
+					"calc(var(--font-size) + 44px)", // 60px
+					{
+						lineHeight: "1" // 1
+					}
+				],
+				"7xl": [
+					"calc(var(--font-size) + 56px)", // 72px
+					{
+						lineHeight: "1" // 1
+					}
+				],
+				"8xl": [
+					"calc(var(--font-size) + 80px)", // 96px
+					{
+						lineHeight: "1" // 1
+					}
+				],
+				"9xl": [
+					"calc(var(--font-size) + 112px)", // 128px
+					{
+						lineHeight: "1" // 1
+					}
+				]
+			},
 			colors: {
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",

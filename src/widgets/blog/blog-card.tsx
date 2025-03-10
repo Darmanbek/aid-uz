@@ -5,9 +5,9 @@ import {
 	CardContent,
 	CardDescription,
 	CardHeader,
-	CardTitle
+	CardTitle,
+	Image
 } from "@/shared/ui"
-import Image from "next/image"
 import { type FC } from "react"
 
 interface BlogCardProps {
@@ -30,7 +30,7 @@ const BlogCard: FC<BlogCardProps> = ({ data: blog, className, classNames }) => {
 				src={blog?.image}
 				width={390}
 				height={280}
-				alt={""}
+				alt={blog.title}
 				className={cn("w-full", classNames?.image)}
 			/>
 			<CardHeader className={classNames?.header}>

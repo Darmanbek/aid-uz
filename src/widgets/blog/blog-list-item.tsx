@@ -1,9 +1,14 @@
 import { cn } from "@/shared/lib/utils"
 import type { Blog } from "@/shared/types"
-import { Button, CardDescription, CardTitle, Separator } from "@/shared/ui"
+import {
+	Button,
+	CardDescription,
+	CardTitle,
+	Image,
+	Separator
+} from "@/shared/ui"
 import { Stack } from "@/widgets"
 import { ChevronRight } from "lucide-react"
-import Image from "next/image"
 import { type FC } from "react"
 
 interface BlogListItemProps {
@@ -35,7 +40,7 @@ const BlogListItem: FC<BlogListItemProps> = ({
 				<Image
 					fill={true}
 					src={blog.image}
-					alt={""}
+					alt={blog.title}
 					className={"object-cover w-full h-full"}
 				/>
 			</div>

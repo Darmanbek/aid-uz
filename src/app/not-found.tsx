@@ -1,5 +1,5 @@
+import { Image } from "@/shared/ui"
 import { Container } from "@/widgets"
-import Image from "next/image"
 
 export const metadata = {
 	title: "Страница не найдена"

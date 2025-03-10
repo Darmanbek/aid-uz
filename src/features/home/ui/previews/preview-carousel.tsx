@@ -8,7 +8,8 @@ import {
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
-	CarouselPrevious
+	CarouselPrevious,
+	Skeleton
 } from "@/shared/ui"
 import { type FC, useEffect, useState } from "react"
 import { PreviewItem } from "./preview-item"
@@ -62,18 +63,22 @@ const PreviewCarousel: FC = () => {
 				/>
 			</Carousel>
 			<div className={"py-2 flex justify-center gap-3"}>
-				{Array.from({ length: count }).map((_, index) => (
-					<span
-						className={cn(
-							"size-3 cursor-pointer rounded-full bg-muted-foreground/60",
-							{
-								"bg-primary-secondary": current - 1 === index
-							}
-						)}
-						onClick={() => api?.scrollTo(index)}
-						key={index}
-					/>
-				))}
+				{api
+					? Array.from({ length: count }).map((_, index) => (
+							<span
+								className={cn(
+									"size-3 cursor-pointer rounded-full bg-muted-foreground/60",
+									{
+										"bg-primary-secondary": current - 1 === index
+									}
+								)}
+								onClick={() => api?.scrollTo(index)}
+								key={index}
+							/>
+						))
+					: Array.from({ length: 5 }).map((_, index) => (
+							<Skeleton className={"size-3 rounded-full"} key={index} />
+						))}
 			</div>
 		</div>
 	)

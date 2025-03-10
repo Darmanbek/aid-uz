@@ -1,8 +1,7 @@
 import type { Preview } from "@/shared/types"
-import { Button } from "@/shared/ui"
+import { Button, Image } from "@/shared/ui"
 import { Stack } from "@/widgets"
 import { ChevronRight } from "lucide-react"
-import Image from "next/image"
 import { type FC } from "react"
 
 interface PreviewItemProps {
@@ -20,7 +19,7 @@ const PreviewItem: FC<PreviewItemProps> = ({ data: preview }) => {
 				<Image
 					src={preview?.image}
 					fill={true}
-					alt={""}
+					alt={preview.title}
 					className={"object-cover w-full h-full"}
 				/>
 			</div>
