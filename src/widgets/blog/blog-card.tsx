@@ -31,7 +31,7 @@ const BlogCard: FC<BlogCardProps> = ({ data: blog, className, classNames }) => {
 				width={390}
 				height={280}
 				alt={blog.title}
-				className={cn("w-full", classNames?.image)}
+				className={cn("w-full max-h-64 object-cover", classNames?.image)}
 			/>
 			<CardHeader className={classNames?.header}>
 				<CardTitle className={cn("text-xl", classNames?.title)}>

@@ -1,9 +1,9 @@
-import type { Blog } from "@/shared/types"
+import { News } from "@/services/news"
 import { type FC } from "react"
 import { BlogCard } from "./blog-card"
 
 interface BlogListProps {
-	data: Blog[]
+	data: News[]
 	itemClassName?: string
 	itemClassNames?: {
 		image?: string
@@ -16,7 +16,7 @@ interface BlogListProps {
 }
 
 const BlogCardList: FC<BlogListProps> = ({
-	data: blogs,
+	data: blogs = [],
 	itemClassNames,
 	itemClassName
 }) => {

@@ -1,11 +1,11 @@
-import type { Preview } from "@/shared/types"
+import type { News } from "@/services/news"
 import { Button, Image } from "@/shared/ui"
 import { Stack } from "@/widgets"
 import { ChevronRight } from "lucide-react"
 import { type FC } from "react"
 
 interface PreviewItemProps {
-	data: Preview
+	data: News
 }
 
 const PreviewItem: FC<PreviewItemProps> = ({ data: preview }) => {
@@ -13,7 +13,7 @@ const PreviewItem: FC<PreviewItemProps> = ({ data: preview }) => {
 		<div className={"flex max-lg:flex-col gap-10 p-1"}>
 			<div
 				className={
-					"relative w-full lg:min-w-[500px] aspect-[16/10] rounded-2xl overflow-hidden"
+					"relative w-full lg:min-w-[500px] aspect-[16/10] max-w-[707px] rounded-2xl overflow-hidden"
 				}
 			>
 				<Image

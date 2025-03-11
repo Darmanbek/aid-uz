@@ -1,6 +1,6 @@
 "use client"
 
-import { previewsData } from "@/shared/data"
+import type { News } from "@/services/news"
 import { cn } from "@/shared/lib/utils"
 import {
 	Carousel,
@@ -14,7 +14,11 @@ import {
 import { type FC, useEffect, useState } from "react"
 import { PreviewItem } from "./preview-item"
 
-const PreviewCarousel: FC = () => {
+interface PreviewCarouselProps {
+	data: News[]
+}
+
+const PreviewCarousel: FC<PreviewCarouselProps> = ({ data: news = [] }) => {
 	const [api, setApi] = useState<CarouselApi>()
 	const [current, setCurrent] = useState(0)
 	const [count, setCount] = useState(0)
@@ -41,7 +45,7 @@ const PreviewCarousel: FC = () => {
 				}}
 			>
 				<CarouselContent>
-					{previewsData.map((preview, index) => (
+					{news.map((preview, index) => (
 						<CarouselItem key={index}>
 							<PreviewItem data={preview} />
 						</CarouselItem>
